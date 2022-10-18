@@ -18,3 +18,14 @@ To test whether the algorithm works correctly we can use a Depth First Search al
 2. An array of boolean to keep track of the visited nodes
 
 The algorithm starts from the starting node and it explores the maze until it reaches the end node. If the algorithm reaches a dead end it backtracks until it finds a node that has an unvisited neighbour. The algorithm stops when it reaches the end node. At each node it choose the neighbour to visit in the following order: left, top, bottom, right. If the algorithm reaches the end node it means that the maze is solvable. If the algorithm reaches a dead end it means that the maze is not solvable.
+
+## Instructions
+To compile the code you need to have the [CMake](https://cmake.org/) build system installed. To compile the code you need to run the following command:
+```bash
+make
+```
+
+To run the code you need to run the following command:
+```bash
+output/main
+```
