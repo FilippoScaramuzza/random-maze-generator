@@ -1,5 +1,7 @@
 # Random Maze Generator using Disjoint Sets Data-Structure
 
+Google colab ![notebook](https://colab.research.google.com/drive/15ZASwkjss7a_Pg8qqG4KitJWukR0nDj7?usp=sharing).
+
 This is a simple implementation of a random maze generator using disjoint sets data-structure. This project is a part of the course [Advanced Algorithms and Parallel Programming](https://www4.ceda.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?EVN_DETTAGLIO_RIGA_MANIFESTO=evento&aa=2022&k_cf=225&k_corso_la=481&k_indir=T2A&codDescr=095946&lang=EN&semestre=1&idGruppo=4475&idRiga=281839) at Polytechnic University of Milan.
 
 ## Theory and Implementation
