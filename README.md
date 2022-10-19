@@ -29,5 +29,5 @@ make
 
 To run the code you need to run the following command:
 ```bash
-output/main
+output/main <rows> <cols>
 ```
