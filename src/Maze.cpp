@@ -10,9 +10,10 @@
 #include "Maze.hpp"
 #include <cstdlib>
 #include <ctime>
-#include <iostream>
+// #include <iostream> 
 #include <stack>
 #include <map>
+#include <stdio.h>
 
 using namespace std;
 
@@ -46,6 +47,11 @@ void Maze::Generate() {
     while(this->disjointSet->Find(start) != this->disjointSet->Find(goal)) {
         // Select a random wall, from 0 to (cols - 1)*rows -1 it's a vertical wall, otherwise it's a horizontal wall
         int w = rand() % this->w;
+        
+        if(!walls[w]) {  // If the wall is already removed, skip it
+            continue;
+        }
+
         walls[w] = false;
 
         int x, y;
@@ -65,7 +71,9 @@ void Maze::Generate() {
 
         if(this->disjointSet->Find(x) != this->disjointSet->Find(y)) {
             this->disjointSet->Union(x, y);
-            cout << "Union: " << x << " " << y << " from wall " << w << endl;
+
+            // cout << "Union: " << x << " " << y << " from wall " << w << endl;
+            // printf("Union: %d %d from wall %d\n", x, y, w);
         }
     }
 }
@@ -74,14 +82,17 @@ void Maze::Print(std::vector<int> path) {
     // Draw the first row of the maze checking only vertical walls
     // The array is ordered having first the vertical walls and then the horizontal walls
     for (int i = 0; i < cols; i++) {
-        cout << "+---";
+        // cout << "+---";
+        printf("+---");
     }
-    cout << "+" << endl;
+    // cout << "+" << endl;
+    printf("+\n");
 
     // Draw the rest of the maze
     for (int i = 0; i < rows; i++) {
         // Draw the left wall
-        cout << "|";
+        // cout << "|";
+        printf("|");
         for (int j = 0; j < cols; j++) {
 
             int cell = i * cols + j;
@@ -89,31 +100,39 @@ void Maze::Print(std::vector<int> path) {
             // Draw the bottom wall
             if (walls[(cols-1)*i + j] || j == cols - 1) {
                 if(find(path.begin(), path.end(), cell) != path.end()) {
-                    cout << " # |";
+                    // cout << " # |";
+                    printf(" # |");
                 }
                 else {
-                    cout << "   |";
+                    // cout << "   |";
+                    printf("   |");
                 }
             } else {
                 if(find(path.begin(), path.end(), cell) != path.end()) {
-                    cout << " #  ";
+                    // cout << " #  ";
+                    printf(" #  ");
                 }
                 else {
-                    cout << "    ";
+                    // cout << "    ";
+                    printf("    ");
                 }
             }
         }
-        cout << endl;
+        // cout << endl;
+        printf("\n");
 
         // Draw the bottom wall
         for (int j = 0; j < cols; j++) {
             if (walls[(cols-1)*rows + i*cols + j] || i == rows - 1) {
-                cout << "+---";
+                // cout << "+---";
+                printf("+---");
             } else {
-                cout << "+   ";
+                // cout << "+   ";
+                printf("+   ");
             }
         }
-        cout << "+" << endl;
+        // cout << "+" << endl;
+        printf("+\n");
     }
 }
 

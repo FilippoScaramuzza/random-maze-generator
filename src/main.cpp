@@ -9,7 +9,9 @@
 
 #include "DisjointSet.hpp"
 #include "Maze.hpp"
-#include <iostream>
+// #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -18,7 +20,8 @@ int main(int argc, char *argv[]) {
     int rows, cols;
 
     if(argc != 3) {
-        cout << "Usage: ./maze rows cols" << endl;
+        // cout << "Usage: ./maze rows cols" << endl;
+        printf("Usage: ./maze rows cols\n");
         return 1;
     }
 
@@ -32,9 +35,11 @@ int main(int argc, char *argv[]) {
     bool dfs = maze.DepthFirstSearch();
 
     if(dfs) {
-        cout << "The maze is solvable :D" << endl;
+        // cout << "The maze is solvable :D" << endl;
+        printf("The maze is solvable :D\n");
     } else {
-        cout << "The maze is not solvable D:" << endl;
+        // cout << "The maze is not solvable D:" << endl;
+        printf("The maze is not solvable D:\n");
     }
 
 
