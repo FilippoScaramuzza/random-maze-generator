@@ -17,7 +17,7 @@ The algorithm is based on the Disjoint Sets data-structure. To have an idea of w
 The data structure used to implement the disjoint sets data-structure is an array of integers. Each element of the array represents a node of the disjoint sets data-structure. The value of each element is the index of the parent of the node. If the value of the element is negative it means that the node is a representative of a disjoint set. The absolute value of the element is the size of the set. The size of the set is used to keep the tree balanced. The algorithm used to merge two disjoint sets is the **union by rank** algorithm. The algorithm used to find the representative of a set is the **path compression** algorithm. The latter is used to reduce the height of the tree and to make the find operation faster.
 
 ## Testing the Algorithm
-To test whether the algorithm works correctly we can use a Depth First Search algorithm. The algorithm is based on the ![Trémaux's algorithm](https://www.wikiwand.com/en/Maze_solving_algorithm#Tr%C3%A9maux's_algorithm). The algorithm uses two main data structure:
+To test whether the algorithm works correctly we can use a Depth First Search algorithm. The algorithm is based on the [Trémaux's algorithm](https://www.wikiwand.com/en/Maze_solving_algorithm#Tr%C3%A9maux's_algorithm). The algorithm uses two main data structure:
 1. A stack to keep track of the path and to backtrack when necessary
 2. An array of boolean to keep track of the visited nodes
 
